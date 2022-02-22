@@ -5,12 +5,14 @@ import { CadastrosRoutingModule } from './cadastros-routing.module';
 import { LivrosComponent } from './livros/livros.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AutorComponent } from './autor/autor.component';
 
 
 @NgModule({
   declarations: [
     LivrosComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    AutorComponent
   ],
   imports: [
     CommonModule,

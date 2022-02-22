@@ -1,4 +1,8 @@
+import { ServiceUsuarioService } from './../../servicos/service-usuario.service';
+import { Usuario } from './../../modelos/usuario';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-usuarios',
@@ -7,9 +11,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuariosComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private apiService: ServiceUsuarioService,
+    private fb: FormBuilder
+  ) {}
 
-  ngOnInit(): void {
+  usuarios$?: Observable<Usuario[]>;
+
+  usuarioForm = this.fb.group({
+    nome: ['', Validators.required],
+    email: ['', Validators.required],
+  });
+
+  addUsuario() {
+    const usuario: Usuario = this.usuarioForm.value;
+
+    this.apiService.addUsuario(usuario).subscribe({
+      next: () => {
+        this.usuarioForm.reset();
+        this.usuarios$ = this.apiService.listUsuario();
+      },
+    });
   }
 
+  ngOnInit(): void {
+    this.usuarios$ = this.apiService.listUsuario();
+  }
 }
