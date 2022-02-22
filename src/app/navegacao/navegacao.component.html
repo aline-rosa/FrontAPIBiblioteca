@@ -1,0 +1,33 @@
+<mat-toolbar color="accent">
+  <!--Logo da navbar-->
+  <div class="imgLogo">
+    <a routerLink="/home">
+      <img src="../../assets/img/logoBook.png" alt="logo" width="70"  />
+    </a>
+  </div>
+  <!--botão menu-->
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="Example icon-button with a menu"
+    class="menu"
+  >
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/usuarios">
+      <mat-icon><span class="material-icons"> person_add </span></mat-icon>
+      <span>Usuários</span>
+    </button>
+
+    <button mat-menu-item routerLink="/livros">
+      <mat-icon><span class="material-icons"> auto_stories </span></mat-icon>
+      <span>Livros</span>
+    </button>
+
+    <button mat-menu-item routerLink="/autores">
+      <mat-icon><span class="material-icons"> history_edu </span></mat-icon>
+      <span>Autores</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>

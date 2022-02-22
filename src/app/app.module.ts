@@ -10,6 +10,12 @@ import { AutorComponent } from './components/autor/autor.component';
 import { LivrosComponent } from './components/livros/livros.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { TesteComponent } from './teste/teste.component';
+import { NavegacaoComponent } from './navegacao/navegacao.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatMenuModule} from '@angular/material/menu';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +24,8 @@ import { TesteComponent } from './teste/teste.component';
     UsuariosComponent,
     LivrosComponent,
     AutorComponent,
+    NavegacaoComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,6 +34,10 @@ import { TesteComponent } from './teste/teste.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent],
