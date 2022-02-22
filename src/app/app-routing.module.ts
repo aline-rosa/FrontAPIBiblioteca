@@ -1,22 +1,27 @@
-import { UsuariosComponent } from './cadastros/usuarios/usuarios.component';
-import { TesteComponent } from './teste/teste.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+import { AutorComponent } from './components/autor/autor.component';
+import { LivrosComponent } from './components/livros/livros.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'teste',
+    redirectTo: 'usuarios',
   },
   {
-    path: 'teste',
-    component: TesteComponent
+    path: 'usuarios',
+    component: UsuariosComponent,
   },
   {
-    path: 'cadastros',
-    loadChildren: () =>
-      import('./cadastros/cadastros.module').then((c) => c.CadastrosModule),
+    path: 'livros',
+    component: LivrosComponent,
+  },
+  {
+    path: 'autores',
+    component: AutorComponent,
   },
 ];
 

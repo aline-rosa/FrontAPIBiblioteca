@@ -1,12 +1,12 @@
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
+
+import { ServiceUsuarioService } from '../servicos/service-usuario.service';
 import { Usuario } from './../modelos/usuario';
+
 // import { ServiceUsuarioService } from './../../servicos/service-usuario.service';
 // import { Usuario } from './../../modelos/usuario';
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Validators, FormBuilder } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { ServiceUsuarioService } from '../servicos/service-usuario.service';
-
 @Component({
   selector: 'app-teste',
   templateUrl: './teste.component.html',

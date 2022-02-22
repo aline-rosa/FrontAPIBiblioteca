@@ -1,16 +1,16 @@
-import { Livro } from './../../modelos/livro';
-import { ServiceLivroService } from './../../servicos/service-livro.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 
+import { Livro } from '../../modelos/livro';
+import { ServiceLivroService } from '../../servicos/service-livro.service';
+
 @Component({
   selector: 'app-livros',
   templateUrl: './livros.component.html',
-  styleUrls: ['./livros.component.scss']
+  styleUrls: ['./livros.component.scss'],
 })
 export class LivrosComponent implements OnInit {
-
   constructor(
     private apiService: ServiceLivroService,
     private fb: FormBuilder
@@ -20,10 +20,9 @@ export class LivrosComponent implements OnInit {
 
   livroForm = this.fb.group({
     titulo: ['', Validators.required],
-    autor: ['', Validators.required],
+    genero: ['', Validators.required],
     paginas: ['', Validators.required],
-    disponivel: ['', Validators.required],
-    atrasado: ['', Validators.required],
+    AutorId: ['', Validators.required],
   });
 
   addLivro() {

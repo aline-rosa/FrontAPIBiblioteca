@@ -9,10 +9,10 @@ export class ServiceAutorService {
 
   constructor(private http: HttpClient) {}
 
-  url = 'http://localhost:3000/autor';
+  url = 'http://localhost:3000/autores';
 
   listAutor() {
-    return this.http.get<Autor[]>(`${this.url}/listar`);
+    return this.http.get<Autor[]>(`${this.url}/`);
   }
 
   getAutor(id: string) {
