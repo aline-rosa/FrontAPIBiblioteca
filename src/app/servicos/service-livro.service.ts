@@ -1,3 +1,6 @@
+import { Livro } from './../modelos/livro';
+
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +8,30 @@ import { Injectable } from '@angular/core';
 })
 export class ServiceLivroService {
 
-  constructor() { }
+  constructor(private http: HttpClient) {}
+
+  url = 'http://localhost:3000';
+
+  listLivro() {
+    return this.http.get<Livro[]>(`${this.url}/listar`);
+  }
+
+  getLivro(id: string) {
+    return this.http.get<Livro>(`${this.url}/${id}`);
+  }
+
+  addLivro(livro: Livro) {
+    return this.http.post<Livro>(`${this.url}/add`, livro);
+  }
+
+  updateLivro(livro: Livro) {
+    return this.http.patch<Livro>(
+      `${this.url}/atualizar`,
+      livro
+    );
+  }
+
+  deleteLivro() {
+    return this.http.delete<void>(`${this.url}/remover`);
+  }
 }

@@ -1,1 +1,49 @@
-<p>livros works!</p>
+
+<section>
+  <h3>Registro de livros</h3>
+  <form [formGroup]="livroForm" (ngSubmit)="addLivro()">
+    <div><input type="text" placeholder="Nome" formControlName="name" /></div>
+    <div>
+      <input
+        type="string"
+        placeholder="Título"
+        formControlName="título"
+      />
+    </div>
+    <div>
+      <input
+        type="string"
+        placeholder="Autor"
+        formControlName="autor"
+      />
+    </div>
+    <div>
+      <input
+        type="number"
+        placeholder="Paginação"
+        formControlName="paginas"
+      />
+    </div>
+    <div>
+      <mat-checkbox [formControl]="hideRequiredControl">Disponível</mat-checkbox>
+    </div>
+    <div>
+      <mat-checkbox [formControl]="hideRequiredControl">Atrasado</mat-checkbox>
+    </div>
+    <button [disabled]="!livroForm.valid">Adicionar</button>
+  </form>
+</section>
+
+<hr />
+
+<section>
+  <h3>Livros Cadastrados</h3>
+  <ul>
+    <li *ngFor="let livro of livros$ | async">
+      <p [routerLink]="['livros', livro.id]"
+        >{{ livro.titulo }} | {{ livro.autor }}
+      </p>
+    </li>
+  </ul>
+</section>
+
