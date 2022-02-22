@@ -9,10 +9,10 @@ export class ServiceUsuarioService {
 
   constructor(private http: HttpClient) {}
 
-  url = 'http://localhost:3000/usuario';
+  url = 'http://localhost:3000/usuarios';
 
   listUsuario() {
-    return this.http.get<Usuario[]>(`${this.url}/listar`);
+    return this.http.get<Usuario[]>(`${this.url}/`);
   }
 
   getUsuario(id: string) {
