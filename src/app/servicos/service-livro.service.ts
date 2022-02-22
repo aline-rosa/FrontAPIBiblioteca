@@ -10,7 +10,7 @@ export class ServiceLivroService {
 
   constructor(private http: HttpClient) {}
 
-  url = 'http://localhost:3000';
+  url = 'http://localhost:3000/livros';
 
   listLivro() {
     return this.http.get<Livro[]>(`${this.url}/listar`);

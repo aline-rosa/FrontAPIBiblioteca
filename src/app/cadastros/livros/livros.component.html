@@ -24,12 +24,6 @@
         formControlName="paginas"
       />
     </div>
-    <div>
-      <mat-checkbox [formControl]="hideRequiredControl">Disponível</mat-checkbox>
-    </div>
-    <div>
-      <mat-checkbox [formControl]="hideRequiredControl">Atrasado</mat-checkbox>
-    </div>
     <button [disabled]="!livroForm.valid">Adicionar</button>
   </form>
 </section>
@@ -46,4 +40,6 @@
     </li>
   </ul>
 </section>
+
+
 
