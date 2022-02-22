@@ -1,10 +1,11 @@
-import { LivrosComponent } from './livros/livros.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { UsuariosComponent } from './usuarios/usuarios.component';
+
 const routes: Routes = [
   {
-    path: '', component: LivrosComponent
+    path: 'usuarios', component: UsuariosComponent
   }
 ];
 
