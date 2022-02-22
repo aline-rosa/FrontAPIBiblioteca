@@ -1,6 +1,6 @@
-import { Autor } from './../../modelos/autor';
+import { Autor } from '../../modelos/autor';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ServiceAutorService } from './../../servicos/service-autor.service';
+import { ServiceAutorService } from '../../servicos/service-autor.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -20,7 +20,7 @@ export class AutorComponent implements OnInit {
 
   autorForm = this.fb.group({
     nome: ['', Validators.required],
-    email: ['', Validators.required],
+    descricao: ['', Validators.required],
   });
 
   addAutor() {

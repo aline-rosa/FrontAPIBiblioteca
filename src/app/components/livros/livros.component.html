@@ -1,0 +1,30 @@
+<section>
+  <h3>Registro de livros</h3>
+  <form [formGroup]="livroForm" (ngSubmit)="addLivro()">
+    <div>
+      <input type="string" placeholder="Título" formControlName="titulo" />
+    </div>
+    <div>
+      <input type="string" placeholder="Gênero" formControlName="genero" />
+    </div>
+    <div>
+      <input type="number" placeholder="Autor" formControlName="AutorId" />
+    </div>
+    <div>
+      <input type="number" placeholder="Paginação" formControlName="paginas" />
+    </div>
+    <button [disabled]="!livroForm.valid">Adicionar</button>
+  </form>
+</section>
+
+<hr />
+
+<section>
+  <h3>Livros Cadastrados</h3>
+  <ul>
+    <li *ngFor="let livro of livros$ | async">
+      <p>{{ livro.titulo }} | {{ livro.autor }}
+      </p>
+    </li>
+  </ul>
+</section>
