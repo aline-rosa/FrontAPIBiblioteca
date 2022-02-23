@@ -24,12 +24,12 @@ export class ServiceAutorService {
   }
 
   updateAutor(autor: Autor) {
-    return this.http.patch<Autor>(
+    return this.http.post<Autor>(
       `${this.url}/atualizar`, autor
     );
   }
 
-  deleteAutor() {
-    return this.http.delete<void>(`${this.url}/remover`);
+  deleteAutor(autor: Autor) {
+    return this.http.post<Autor>(`${this.url}/remover`, autor);
   }
 }

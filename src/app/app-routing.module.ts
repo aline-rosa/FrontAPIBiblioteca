@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AutorComponent } from './components/autor/autor.component';
+import { EditAutorComponent } from './components/edit-autor/edit-autor.component';
 import { LivrosComponent } from './components/livros/livros.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { HomeComponent } from './home/home.component';
@@ -28,6 +29,10 @@ const routes: Routes = [
     path: 'autores',
     component: AutorComponent,
   },
+  {
+    path: 'autores/:id',
+    component: EditAutorComponent
+  }
 ];
 
 @NgModule({

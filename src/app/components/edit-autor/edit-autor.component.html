@@ -1,0 +1,18 @@
+<section>
+  <h3>Edição de autor</h3>
+  <form [formGroup]="autorForm" (ngSubmit)="editAutor()">
+    <div><input type="hidden" formControlName="id"></div>
+    <div><input type="text" placeholder="Nome" formControlName="nome" /></div>
+    <div>
+      <input
+        type="description"
+        placeholder="Descrição"
+        formControlName="descricao"
+      />
+    </div>
+    <button [disabled]="!autorForm.valid">Atualizar</button>
+    <div>
+      <button type="button" (click)="deleteAutor()">Excluir autor</button>
+    </div>
+  </form>
+</section>
