@@ -33,7 +33,7 @@ export class EditLivroComponent implements OnInit {
     const livro: Livro = this.livroForm.value;
     livro.id = this.route.snapshot.params['id'];
 
-    this.apiService.updateLivro(livro).subscribe();
+    this.apiService.updateLivro(livro).subscribe(()=>this.router.navigate(['livros']));
   }
 
   removeLivro() {
