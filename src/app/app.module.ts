@@ -16,6 +16,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import { HomeComponent } from './home/home.component';
+import { EditLivroComponent } from './components/edit-livro/edit-livro.component';
+import { EditAutorComponent } from './components/edit-autor/edit-autor.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { HomeComponent } from './home/home.component';
     AutorComponent,
     NavegacaoComponent,
     HomeComponent,
+    EditLivroComponent,
+    EditAutorComponent,
   ],
   imports: [
     BrowserModule,
