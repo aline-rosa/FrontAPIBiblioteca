@@ -57,7 +57,7 @@
   <h3>Livros Cadastrados</h3>
   <ul>
     <li *ngFor="let livro of livros$ | async">
-      <p>{{ livro.titulo }} | {{ livro.autor }}
+      <p [routerLink]="[livro.id]" >{{ livro.titulo }} | {{ livro.autor }}
       </p>
     </li>
   </ul>

@@ -45,7 +45,7 @@
   <h3>Usuários Cadastrados</h3>
   <ul>
     <li *ngFor="let usuario of usuarios$ | async">
-      <p>{{ usuario.nome }} | {{ usuario.email }}</p>
+      <p [routerLink]="[usuario.id]">{{ usuario.nome }} | {{ usuario.email }}</p>
     </li>
   </ul>
 </div>

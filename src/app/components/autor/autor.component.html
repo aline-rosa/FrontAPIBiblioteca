@@ -18,7 +18,7 @@
   <h3>Autores Cadastrados</h3>
   <ul>
     <li *ngFor="let autor of autor$ | async">
-      <p>{{ autor.nome }} | {{ autor.descricao }}
+      <p [routerLink]="[autor.id]">{{ autor.nome }} | {{ autor.descricao }}
       </p>
     </li>
   </ul>

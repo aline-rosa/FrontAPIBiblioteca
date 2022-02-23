@@ -1,0 +1,28 @@
+<section>
+  <h3></h3>
+  <form [formGroup]="livroForm" (ngSubmit)="editLivro()">
+    <div>
+      <input type="hidden" formControlName="id">
+    </div>
+    <div>
+      <input type="string" placeholder="Título" formControlName="titulo" />
+    </div>
+    <div>
+      <input type="string" placeholder="Gênero" formControlName="genero" />
+    </div>
+    <div>
+      <input type="number" placeholder="Autor" formControlName="AutorId" />
+    </div>
+    <div>
+      <input type="number" placeholder="Paginação" formControlName="paginas" />
+    </div>
+    <button [disabled]="!livroForm.valid">Atualizar</button>
+  </form>
+
+  <form [formGroup]="deleteForm" (ngSubmit)="removeLivro()">
+    <div>
+      <input type="hidden" formControlName="id">
+    </div>
+    <button [disabled]="!deleteForm.valid">Deletar</button>
+  </form>
+</section>

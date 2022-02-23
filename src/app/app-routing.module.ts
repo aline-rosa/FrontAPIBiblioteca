@@ -1,3 +1,4 @@
+import { EditLivroComponent } from './components/edit-livro/edit-livro.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -6,6 +7,7 @@ import { EditAutorComponent } from './components/edit-autor/edit-autor.component
 import { LivrosComponent } from './components/livros/livros.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { HomeComponent } from './home/home.component';
+import { EditAutorComponent } from './components/edit-autor/edit-autor.component';
 
 const routes: Routes = [
   {
@@ -24,6 +26,10 @@ const routes: Routes = [
   {
     path: 'livros',
     component: LivrosComponent,
+  },
+  {
+    path: 'livros/:id',
+    component: EditLivroComponent
   },
   {
     path: 'autores',

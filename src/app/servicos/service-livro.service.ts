@@ -4,10 +4,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ServiceLivroService {
-
   constructor(private http: HttpClient) {}
 
   url = 'http://localhost:3000/livros';
@@ -25,13 +24,10 @@ export class ServiceLivroService {
   }
 
   updateLivro(livro: Livro) {
-    return this.http.patch<Livro>(
-      `${this.url}/atualizar`,
-      livro
-    );
+    return this.http.post<Livro>(`${this.url}/atualizar`, livro);
   }
 
-  deleteLivro() {
-    return this.http.delete<void>(`${this.url}/remover`);
+  deleteLivro(livro: Livro) {
+    return this.http.post<Livro>(`${this.url}/remover`, livro);
   }
 }

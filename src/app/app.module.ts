@@ -17,8 +17,8 @@ import { AutorComponent } from './components/autor/autor.component';
 import { LivrosComponent } from './components/livros/livros.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { HomeComponent } from './home/home.component';
+import { EditLivroComponent } from './components/edit-livro/edit-livro.component';
 import { EditAutorComponent } from './components/edit-autor/edit-autor.component';
-import {MatCardModule} from '@angular/material/card';
 import { NavegacaoComponent } from './navegacao/navegacao.component';
 import { TesteComponent } from './teste/teste.component';
 
@@ -31,6 +31,7 @@ import { TesteComponent } from './teste/teste.component';
     AutorComponent,
     NavegacaoComponent,
     HomeComponent,
+    EditLivroComponent,
     EditAutorComponent,
   ],
   imports: [
@@ -44,7 +45,6 @@ import { TesteComponent } from './teste/teste.component';
     MatIconModule,
     MatButtonModule,
     MatMenuModule,
-    MatCardModule
     MatCardModule,
     MatGridListModule
   ],
