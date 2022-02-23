@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ServiceLivroService } from '../servicos/service-livro.service';
+import { Livro } from '../modelos/livro';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  livros$?: Observable<Livro[]>;
+
+
+  constructor(
+    private livrosService: ServiceLivroService
+  ) {
+    this.livros$ = livrosService.listLivro()
+  }
+
+
+
 
   ngOnInit(): void {
   }
