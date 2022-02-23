@@ -1,5 +1,5 @@
 <div>
-  <img src="../../assets/img/codeBanner.png" alt="banner code book">
+  <img src="../../assets/img/codeBanner.png" alt="banner code book" class="imgBanner">
 </div>
 
 <div class="grid-container">
@@ -8,11 +8,14 @@
       <mat-card class="example-card">
         <mat-card-title-group>
           <mat-card-title>{{livro.titulo}}</mat-card-title>
-          <img mat-card-md-image src="../../assets/img/livros.png" >
         </mat-card-title-group>
         <mat-card-content>
           {{livro.autor}}
         </mat-card-content>
+        <div class="fimCard">
+          <img mat-card-md-image src="../../assets/img/livros.png" >
+        </div>
+        <button mat-raised-button routerLink="/usuarios" color="accent">Emprestar</button>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
