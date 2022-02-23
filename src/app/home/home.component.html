@@ -1,1 +1,19 @@
-<h1>Olá Grupo dos trapalhões</h1>
+<div>
+  <img src="../../assets/img/codeBanner.png" alt="banner code book">
+</div>
+
+<div class="grid-container">
+  <mat-grid-list cols="2" rowHeight="2:1" *ngIf="livros$ | async as Livro">
+    <mat-grid-tile *ngFor="let livro of livros$ | async">
+      <mat-card class="example-card">
+        <mat-card-title-group>
+          <mat-card-title>{{livro.titulo}}</mat-card-title>
+          <img mat-card-md-image src="../../assets/img/livros.png" >
+        </mat-card-title-group>
+        <mat-card-content>
+          {{livro.autor}}
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  </div>
