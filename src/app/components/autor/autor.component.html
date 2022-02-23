@@ -1,7 +1,5 @@
 
-<h1>teste</h1>
-
-<section>
+<!-- <section>
   <h3>Cadastro de Autores</h3>
   <form [formGroup]="autorForm" (ngSubmit)="addAutor()">
     <div>
@@ -24,4 +22,41 @@
       </p>
     </li>
   </ul>
-</section>
+</section> -->
+
+
+<div class="container">
+  <div class="row align-items-center my-5">
+    <div class="col-md col-lg-7">
+      <img src="https://img.freepik.com/vetores-gratis/grupo-de-pessoas-lendo-e-pedindo-livros_53876-43122.jpg?t=st=1645581736~exp=1645582336~hmac=01ae2488bfff68de4ff06820028afe13ec8d15e861680f0ac8861c8669dbc6c9&w=1380" class="img-fluid" />
+    </div>
+    <div class="col-md p-5">
+      <form class="my-5" [formGroup]="autorForm" (ngSubmit)="addAutor()">
+        <h3>Registro de Autor</h3>
+        <p class="text-muted"></p>
+
+        <div class="mb-3">
+          <input type="string" placeholder="Nome" formControlName="nome" />
+        </div>
+
+        <div class="mb-3">
+          <input type="string" placeholder="Digite a descrição" formControlName="descricao" />
+        </div>
+
+        <button [disabled]="!autorForm.valid" class="btn btn-primary btn-lg mt-3">Adicionar</button>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <h3>Autores Cadastrados</h3>
+  <ul>
+    <li *ngFor="let autor of autor$ | async">
+      <p>{{ autor.nome }} | {{ autor.descricao }}
+      </p>
+    </li>
+  </ul>
+</div>
